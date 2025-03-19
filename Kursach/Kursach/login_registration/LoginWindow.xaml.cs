@@ -1,18 +1,7 @@
 ﻿using Kursach.Database;
 using Kursach.main_windows;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace Kursach.login_registration
 {
@@ -55,12 +44,12 @@ namespace Kursach.login_registration
                         this.Close();
                         break;
                     case "Менеджер":
-                        var managerDashboard = new ManagerWindow();
+                        var managerDashboard = new ManagerWindow(username);
                         managerDashboard.Show();
                         this.Close();
                         break;
                     case "Пользователь":
-                        var userDashboard = new UserWindow();
+                        var userDashboard = new UserWindow(username); 
                         userDashboard.Show();
                         this.Close();
                         break;
@@ -82,9 +71,9 @@ namespace Kursach.login_registration
             this.Hide();
         }
 
-        private string HashPassword(string password)
+        private void Close_app(object sender, RoutedEventArgs e)
         {
-            return PasswordHelper.HashPassword(password);
+            Application.Current.Shutdown();
         }
     }
 }

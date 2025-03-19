@@ -10,6 +10,7 @@ namespace Kursach.Database
         {
             private static string connectionString = "Server=KLARDEAD;Database=WarehouseDB;Trusted_Connection=True;";
 
+            [Obsolete]
             public static SqlConnection OpenConnection()
             {
                 SqlConnection connection = new SqlConnection(connectionString);
@@ -25,6 +26,7 @@ namespace Kursach.Database
                 }
             }
 
+            [Obsolete]
             public static void CloseConnection(SqlConnection connection)
             {
                 if (connection != null && connection.State == System.Data.ConnectionState.Open)
@@ -33,6 +35,7 @@ namespace Kursach.Database
                 }
             }
 
+            [Obsolete]
             public static void ExecuteNonQuery(string query, Action<SqlCommand> configureCommand)
             {
                 using (SqlConnection connection = OpenConnection())
@@ -45,45 +48,37 @@ namespace Kursach.Database
                 }
             }
 
+            [Obsolete]
             public static object ExecuteScalar(string query, Action<SqlCommand> configureCommand)
             {
-                using (SqlConnection connection = OpenConnection())
+                using (SqlConnection connection = new SqlConnection(connectionString))
                 {
+                    connection.Open();
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
-                        configureCommand?.Invoke(command); 
+                        configureCommand?.Invoke(command);
                         return command.ExecuteScalar();
                     }
                 }
             }
 
+            [Obsolete]
             public static DataTable ExecuteQuery(string query, Action<SqlCommand> configureCommand)
             {
-                DataTable dataTable = new DataTable();
-
+                DataTable table = new DataTable();
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
-                    try
+                    connection.Open();
+                    using (SqlCommand command = new SqlCommand(query, connection))
                     {
-                        connection.Open();
-                        using (SqlCommand command = new SqlCommand(query, connection))
+                        configureCommand?.Invoke(command);
+                        using (SqlDataAdapter adapter = new SqlDataAdapter(command))
                         {
-                            configureCommand?.Invoke(command);
-
-                            using (SqlDataAdapter adapter = new SqlDataAdapter(command))
-                            {
-                                adapter.Fill(dataTable);
-                            }
+                            adapter.Fill(table); 
                         }
                     }
-                    catch (Exception ex)
-                    {
-                        Console.WriteLine($"Ошибка при выполнении запроса: {ex.Message}");
-                        throw;
-                    }
                 }
-
-                return dataTable;
+                return table;
             }
         }
     }

@@ -98,5 +98,10 @@ namespace Kursach.login_registration
                 AccessCodeTextBox.Visibility = showCodeInput ? Visibility.Visible : Visibility.Collapsed;
             }
         }
-}
+
+        private void Close_app(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
+    }
 }

@@ -3,7 +3,10 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="Регистрация" Height="700" Width="500"
         Background="#FF2D2D30" Foreground="White"
-        WindowStartupLocation="CenterScreen">
+        WindowStartupLocation="CenterScreen"
+        WindowStyle="None"
+        AllowsTransparency="True"
+        >
     <Grid>
         <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Width="350" Margin="0,30,0,0">
             <TextBlock Text="Создайте аккаунт" Margin="0,0,0,40"
@@ -26,12 +29,12 @@
                          Margin="0,0,0,20"/>
 
             <TextBlock Text="Выберите роль:" FontSize="14" Margin="0,0,0,5"/>
-            <ComboBox x:Name="RoleComboBox" Width="351" Height="40" Margin="0,0,0,20" HorizontalAlignment="left"
+            <ComboBox x:Name="RoleComboBox" Width="351" Height="40" Margin="0,0,0,20" HorizontalAlignment="Center" Cursor="Hand"
                       Background="#FF3C3C3C" Foreground="#000000" 
                       SelectionChanged="RoleComboBox_SelectionChanged">
-                <ComboBoxItem Content="Администратор"/>
-                <ComboBoxItem Content="Менеджер"/>
-                <ComboBoxItem Content="Пользователь"/>
+                <ComboBoxItem Content="Администратор" Cursor="Hand"/>
+                <ComboBoxItem Content="Менеджер" Cursor="Hand"/>
+                <ComboBoxItem Content="Пользователь" Cursor="Hand"/>
             </ComboBox>
 
             <TextBlock Text="Введите код доступа:" FontSize="14" Margin="0,0,0,5" Visibility="Collapsed" x:Name="CodeLabel"/>
@@ -41,11 +44,14 @@
 
             <Button Content="Зарегистрироваться" Click="Register_Click" 
                     Background="#FF00A651" Foreground="White" 
-                    Height="45" Margin="0,0,0,0"/>
+                    Height="45" Margin="0,0,0,0" Cursor="Hand"/>
             <TextBlock Text="Уже есть аккаунт?" HorizontalAlignment="Center" Margin="0,15,0,0" Foreground="#FFCCCCCC"/>
             <Button Content="Войти" Click="GoToLogin_Click" 
         Background="Transparent" Foreground="#FF0078D4" 
-        BorderThickness="0" FontSize="14" FontWeight="SemiBold" Width="98"/>
+        BorderThickness="0" FontSize="14" FontWeight="SemiBold" Width="98" Cursor="Hand"/>
+            <Button Content="Выйти из приложеня" Click="Close_app" 
+        Background="Transparent" Foreground="#FF7373" 
+        BorderThickness="0" FontSize="14" FontWeight="SemiBold" Width="150" Margin="0,30,0,0" Height="31" Cursor="Hand"/>
         </StackPanel>
     </Grid>
 </Window>

@@ -3,20 +3,40 @@
   "WorkspaceRootPath": "D:\\Werehouse\\Werehouse2.0\\Kursach\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{9740A0AE-43CD-452D-89DE-A51F29567E8B}|Kursach\\Kursach.csproj|d:\\werehouse\\werehouse2.0\\kursach\\kursach\\main_windows\\managerwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9740A0AE-43CD-452D-89DE-A51F29567E8B}|Kursach\\Kursach.csproj|solutionrelative:kursach\\main_windows\\managerwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{9740A0AE-43CD-452D-89DE-A51F29567E8B}|Kursach\\Kursach.csproj|d:\\werehouse\\werehouse2.0\\kursach\\kursach\\main_windows\\admin\\adminwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{9740A0AE-43CD-452D-89DE-A51F29567E8B}|Kursach\\Kursach.csproj|solutionrelative:kursach\\main_windows\\admin\\adminwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9740A0AE-43CD-452D-89DE-A51F29567E8B}|Kursach\\Kursach.csproj|d:\\werehouse\\werehouse2.0\\kursach\\kursach\\main_windows\\managerwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{9740A0AE-43CD-452D-89DE-A51F29567E8B}|Kursach\\Kursach.csproj|solutionrelative:kursach\\main_windows\\managerwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{9740A0AE-43CD-452D-89DE-A51F29567E8B}|Kursach\\Kursach.csproj|d:\\werehouse\\werehouse2.0\\kursach\\kursach\\database\\databasehelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9740A0AE-43CD-452D-89DE-A51F29567E8B}|Kursach\\Kursach.csproj|solutionrelative:kursach\\database\\databasehelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{9740A0AE-43CD-452D-89DE-A51F29567E8B}|Kursach\\Kursach.csproj|d:\\werehouse\\werehouse2.0\\kursach\\kursach\\database\\queries.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9740A0AE-43CD-452D-89DE-A51F29567E8B}|Kursach\\Kursach.csproj|solutionrelative:kursach\\database\\queries.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9740A0AE-43CD-452D-89DE-A51F29567E8B}|Kursach\\Kursach.csproj|d:\\werehouse\\werehouse2.0\\kursach\\kursach\\login_registration\\loginwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{9740A0AE-43CD-452D-89DE-A51F29567E8B}|Kursach\\Kursach.csproj|solutionrelative:kursach\\login_registration\\loginwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{9740A0AE-43CD-452D-89DE-A51F29567E8B}|Kursach\\Kursach.csproj|d:\\werehouse\\werehouse2.0\\kursach\\kursach\\login_registration\\registerwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9740A0AE-43CD-452D-89DE-A51F29567E8B}|Kursach\\Kursach.csproj|solutionrelative:kursach\\login_registration\\registerwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9740A0AE-43CD-452D-89DE-A51F29567E8B}|Kursach\\Kursach.csproj|d:\\werehouse\\werehouse2.0\\kursach\\kursach\\login_registration\\loginwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9740A0AE-43CD-452D-89DE-A51F29567E8B}|Kursach\\Kursach.csproj|solutionrelative:kursach\\login_registration\\loginwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9740A0AE-43CD-452D-89DE-A51F29567E8B}|Kursach\\Kursach.csproj|d:\\werehouse\\werehouse2.0\\kursach\\kursach\\main_windows\\admin\\adminwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9740A0AE-43CD-452D-89DE-A51F29567E8B}|Kursach\\Kursach.csproj|solutionrelative:kursach\\main_windows\\admin\\adminwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9740A0AE-43CD-452D-89DE-A51F29567E8B}|Kursach\\Kursach.csproj|d:\\werehouse\\werehouse2.0\\kursach\\kursach\\main_windows\\managerwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9740A0AE-43CD-452D-89DE-A51F29567E8B}|Kursach\\Kursach.csproj|solutionrelative:kursach\\main_windows\\managerwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9740A0AE-43CD-452D-89DE-A51F29567E8B}|Kursach\\Kursach.csproj|d:\\werehouse\\werehouse2.0\\kursach\\kursach\\login_registration\\registerwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{9740A0AE-43CD-452D-89DE-A51F29567E8B}|Kursach\\Kursach.csproj|solutionrelative:kursach\\login_registration\\registerwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9740A0AE-43CD-452D-89DE-A51F29567E8B}|Kursach\\Kursach.csproj|d:\\werehouse\\werehouse2.0\\kursach\\kursach\\main_windows\\saleswindowmanager.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9740A0AE-43CD-452D-89DE-A51F29567E8B}|Kursach\\Kursach.csproj|solutionrelative:kursach\\main_windows\\saleswindowmanager.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,19 +46,90 @@
       "DocumentGroups": [
         {
           "DockedWidth": 171,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "LoginWindow.xaml",
-              "DocumentMoniker": "D:\\Werehouse\\Werehouse2.0\\Kursach\\Kursach\\login_registration\\LoginWindow.xaml",
-              "RelativeDocumentMoniker": "Kursach\\login_registration\\LoginWindow.xaml",
-              "ToolTip": "D:\\Werehouse\\Werehouse2.0\\Kursach\\Kursach\\login_registration\\LoginWindow.xaml",
-              "RelativeToolTip": "Kursach\\login_registration\\LoginWindow.xaml",
+              "DocumentIndex": 1,
+              "Title": "DatabaseHelper.cs",
+              "DocumentMoniker": "D:\\Werehouse\\Werehouse2.0\\Kursach\\Kursach\\Database\\DatabaseHelper.cs",
+              "RelativeDocumentMoniker": "Kursach\\Database\\DatabaseHelper.cs",
+              "ToolTip": "D:\\Werehouse\\Werehouse2.0\\Kursach\\Kursach\\Database\\DatabaseHelper.cs",
+              "RelativeToolTip": "Kursach\\Database\\DatabaseHelper.cs",
+              "ViewState": "AgIAACgAAAAAAAAAAADwvzIAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-22T11:51:27.673Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "AdminWindow.xaml.cs",
+              "DocumentMoniker": "D:\\Werehouse\\Werehouse2.0\\Kursach\\Kursach\\main_windows\\admin\\AdminWindow.xaml.cs",
+              "RelativeDocumentMoniker": "Kursach\\main_windows\\admin\\AdminWindow.xaml.cs",
+              "ToolTip": "D:\\Werehouse\\Werehouse2.0\\Kursach\\Kursach\\main_windows\\admin\\AdminWindow.xaml.cs",
+              "RelativeToolTip": "Kursach\\main_windows\\admin\\AdminWindow.xaml.cs",
+              "ViewState": "AgIAADoAAAAAAAAAAADwv1QAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-22T11:49:06.68Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AdminWindow.xaml",
+              "DocumentMoniker": "D:\\Werehouse\\Werehouse2.0\\Kursach\\Kursach\\main_windows\\admin\\AdminWindow.xaml",
+              "RelativeDocumentMoniker": "Kursach\\main_windows\\admin\\AdminWindow.xaml",
+              "ToolTip": "D:\\Werehouse\\Werehouse2.0\\Kursach\\Kursach\\main_windows\\admin\\AdminWindow.xaml",
+              "RelativeToolTip": "Kursach\\main_windows\\admin\\AdminWindow.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-03-19T21:55:10.808Z",
+              "WhenOpened": "2025-03-22T10:34:19.011Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "LoginWindow.xaml.cs",
+              "DocumentMoniker": "D:\\Werehouse\\Werehouse2.0\\Kursach\\Kursach\\login_registration\\LoginWindow.xaml.cs",
+              "RelativeDocumentMoniker": "Kursach\\login_registration\\LoginWindow.xaml.cs",
+              "ToolTip": "D:\\Werehouse\\Werehouse2.0\\Kursach\\Kursach\\login_registration\\LoginWindow.xaml.cs",
+              "RelativeToolTip": "Kursach\\login_registration\\LoginWindow.xaml.cs",
+              "ViewState": "AgIAACYAAAAAAAAAAAAAAB4AAABhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-21T13:38:49.3Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "RegisterWindow.xaml.cs",
+              "DocumentMoniker": "D:\\Werehouse\\Werehouse2.0\\Kursach\\Kursach\\login_registration\\RegisterWindow.xaml.cs",
+              "RelativeDocumentMoniker": "Kursach\\login_registration\\RegisterWindow.xaml.cs",
+              "ToolTip": "D:\\Werehouse\\Werehouse2.0\\Kursach\\Kursach\\login_registration\\RegisterWindow.xaml.cs",
+              "RelativeToolTip": "Kursach\\login_registration\\RegisterWindow.xaml.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAADUAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-21T13:35:26.932Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "RegisterWindow.xaml",
+              "DocumentMoniker": "D:\\Werehouse\\Werehouse2.0\\Kursach\\Kursach\\login_registration\\RegisterWindow.xaml",
+              "RelativeDocumentMoniker": "Kursach\\login_registration\\RegisterWindow.xaml",
+              "ToolTip": "D:\\Werehouse\\Werehouse2.0\\Kursach\\Kursach\\login_registration\\RegisterWindow.xaml",
+              "RelativeToolTip": "Kursach\\login_registration\\RegisterWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-03-21T13:35:22.133Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ManagerWindow.xaml.cs",
+              "DocumentMoniker": "D:\\Werehouse\\Werehouse2.0\\Kursach\\Kursach\\main_windows\\ManagerWindow.xaml.cs",
+              "RelativeDocumentMoniker": "Kursach\\main_windows\\ManagerWindow.xaml.cs",
+              "ToolTip": "D:\\Werehouse\\Werehouse2.0\\Kursach\\Kursach\\main_windows\\ManagerWindow.xaml.cs",
+              "RelativeToolTip": "Kursach\\main_windows\\ManagerWindow.xaml.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAAowCoAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-20T12:44:27.614Z"
             },
             {
               "$type": "Document",
@@ -48,35 +139,21 @@
               "RelativeDocumentMoniker": "Kursach\\Database\\Queries.cs",
               "ToolTip": "D:\\Werehouse\\Werehouse2.0\\Kursach\\Kursach\\Database\\Queries.cs",
               "RelativeToolTip": "Kursach\\Database\\Queries.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAAABgAAAASAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-19T21:48:44.065Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-20T12:36:31.256Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ManagerWindow.xaml",
-              "DocumentMoniker": "D:\\Werehouse\\Werehouse2.0\\Kursach\\Kursach\\main_windows\\ManagerWindow.xaml",
-              "RelativeDocumentMoniker": "Kursach\\main_windows\\ManagerWindow.xaml",
-              "ToolTip": "D:\\Werehouse\\Werehouse2.0\\Kursach\\Kursach\\main_windows\\ManagerWindow.xaml",
-              "RelativeToolTip": "Kursach\\main_windows\\ManagerWindow.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-03-19T22:01:37.615Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "ManagerWindow.xaml.cs",
-              "DocumentMoniker": "D:\\Werehouse\\Werehouse2.0\\Kursach\\Kursach\\main_windows\\ManagerWindow.xaml.cs",
-              "RelativeDocumentMoniker": "Kursach\\main_windows\\ManagerWindow.xaml.cs",
-              "ToolTip": "D:\\Werehouse\\Werehouse2.0\\Kursach\\Kursach\\main_windows\\ManagerWindow.xaml.cs",
-              "RelativeToolTip": "Kursach\\main_windows\\ManagerWindow.xaml.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAqwBQAAAAJAAAAAAAAAA==",
+              "DocumentIndex": 8,
+              "Title": "SalesWindowManager.xaml.cs",
+              "DocumentMoniker": "D:\\Werehouse\\Werehouse2.0\\Kursach\\Kursach\\main_windows\\SalesWindowManager.xaml.cs",
+              "RelativeDocumentMoniker": "Kursach\\main_windows\\SalesWindowManager.xaml.cs",
+              "ToolTip": "D:\\Werehouse\\Werehouse2.0\\Kursach\\Kursach\\main_windows\\SalesWindowManager.xaml.cs",
+              "RelativeToolTip": "Kursach\\main_windows\\SalesWindowManager.xaml.cs",
+              "ViewState": "AgIAAP8AAAAAAAAAAAAiwAEAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-19T21:47:43.42Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-20T12:06:31.651Z"
             }
           ]
         }

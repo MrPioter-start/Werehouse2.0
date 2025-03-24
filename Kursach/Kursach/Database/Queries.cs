@@ -10,67 +10,61 @@ namespace Kursach.Database
     {
         [Obsolete]
         public static string GetAdminForManager(string managerUsername)
-{
-    string query = @"
-        SELECT AccessCodes.CreatedBy 
-        FROM Users 
-        INNER JOIN AccessCodes ON Users.AccessCodeID = AccessCodes.CodeID 
-        WHERE Users.Username = @ManagerUsername";
-    return DatabaseHelper.ExecuteScalar(query, command =>
-    {
-        command.Parameters.AddWithValue("@ManagerUsername", managerUsername);
-    })?.ToString();
-}
+        {
+            string query = @"
+                SELECT AccessCodes.CreatedBy 
+                FROM Users 
+                INNER JOIN AccessCodes ON Users.AccessCodeID = AccessCodes.CodeID 
+                WHERE Users.Username = @ManagerUsername";
+            return DatabaseHelper.ExecuteScalar(query, command =>
+            {
+                command.Parameters.AddWithValue("@ManagerUsername", managerUsername);
+            })?.ToString();
+        }
 
         [Obsolete]
-        public static decimal GetCurrentCashAmount(string userUsername)
+        public static decimal GetCurrentCashAmount(string adminUsername)
         {
             string query = @"
         SELECT TOP 1 Amount 
         FROM CashRegister 
-        WHERE UserUsername = @UserUsername 
-        ORDER BY LastUpdate DESC"; 
-
+        WHERE UserUsername = @AdminUsername 
+        ORDER BY LastUpdate DESC";
             object result = DatabaseHelper.ExecuteScalar(query, command =>
             {
-                command.Parameters.AddWithValue("@UserUsername", userUsername);
+                command.Parameters.AddWithValue("@AdminUsername", adminUsername); 
             });
-
             return result != null ? Convert.ToDecimal(result) : 0;
         }
 
         [Obsolete]
-        public static void UpdateCashAmount(decimal amount, string operationType, string userUsername)
+        public static void UpdateCashAmount(decimal amount, string operationType, string adminUsername)
         {
-            decimal currentAmount = GetCurrentCashAmount(userUsername);
-
+            decimal currentAmount = GetCurrentCashAmount(adminUsername);
             if (currentAmount + amount < 0)
             {
-                throw new Exception("Недостаточно средств в кассе для выполнения операции."); 
+                throw new Exception("Недостаточно средств в кассе для выполнения операции.");
             }
 
             string query = @"
-        -- Если записи нет, создаем её
-        IF NOT EXISTS (SELECT 1 FROM CashRegister WHERE UserUsername = @UserUsername)
+        IF NOT EXISTS (SELECT 1 FROM CashRegister WHERE UserUsername = @AdminUsername)
         BEGIN
             INSERT INTO CashRegister (UserUsername, Amount, LastUpdate) 
-            VALUES (@UserUsername, @Amount, GETDATE());
+            VALUES (@AdminUsername, @Amount, GETDATE());
         END
         ELSE
         BEGIN
             UPDATE CashRegister 
             SET Amount = Amount + @Amount, LastUpdate = GETDATE() 
-            WHERE UserUsername = @UserUsername;
+            WHERE UserUsername = @AdminUsername;
         END
-
         INSERT INTO CashTransactions (Amount, OperationType, AdminUsername) 
-        VALUES (@Amount, @OperationType, @UserUsername)";
-
+        VALUES (@Amount, @OperationType, @AdminUsername)";
             DatabaseHelper.ExecuteNonQuery(query, command =>
             {
                 command.Parameters.AddWithValue("@Amount", amount);
                 command.Parameters.AddWithValue("@OperationType", operationType);
-                command.Parameters.AddWithValue("@UserUsername", userUsername);
+                command.Parameters.AddWithValue("@AdminUsername", adminUsername);
             });
         }
 
@@ -121,7 +115,7 @@ namespace Kursach.Database
             ProductName,
             Quantity,
             Price,
-            0 AS ReturnQuantity -- Добавляем колонку для возврата
+            0 AS ReturnQuantity
         FROM SaleDetails
         WHERE SaleID = @SaleID";
 
@@ -226,13 +220,13 @@ namespace Kursach.Database
         public static void AddSale(List<DataRow> selectedProducts, decimal total, string userUsername)
         {
             string insertSaleQuery = @"
-        INSERT INTO Sales (UserUsername, Total, SaleTime) 
-        VALUES (@UserUsername, @Total, @SaleTime);
-        SELECT SCOPE_IDENTITY();";
+                INSERT INTO Sales (UserUsername, Total, SaleTime)
+                VALUES (@UserUsername, @Total, @SaleTime);
+                SELECT SCOPE_IDENTITY();";
 
             int saleId = Convert.ToInt32(DatabaseHelper.ExecuteScalar(insertSaleQuery, command =>
             {
-                command.Parameters.AddWithValue("@UserUsername", userUsername); 
+                command.Parameters.AddWithValue("@UserUsername", userUsername);
                 command.Parameters.AddWithValue("@Total", total);
                 command.Parameters.AddWithValue("@SaleTime", DateTime.Now);
             }));
@@ -240,8 +234,8 @@ namespace Kursach.Database
             foreach (var row in selectedProducts)
             {
                 string insertSaleDetailsQuery = @"
-            INSERT INTO SaleDetails (SaleID, ProductName, Quantity, Price) 
-            VALUES (@SaleID, @ProductName, @Quantity, @Price)";
+                INSERT INTO SaleDetails (SaleID, ProductName, Quantity, Price)
+                VALUES (@SaleID, @ProductName, @Quantity, @Price)";
 
                 DatabaseHelper.ExecuteNonQuery(insertSaleDetailsQuery, command =>
                 {

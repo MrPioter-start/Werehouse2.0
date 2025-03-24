@@ -2,6 +2,7 @@
 using Kursach.main_windows.admin;
 using System.Data;
 using System.Windows;
+using System.Windows.Input;
 
 namespace Kursach.main_windows
 {
@@ -12,15 +13,22 @@ namespace Kursach.main_windows
         public ManagerWindow(string managerUsername)
         {
             InitializeComponent();
-            this.adminUsername = Queries.GetAdminForManager(managerUsername); // Получаем администратора [[1]]
+            this.adminUsername = Queries.GetAdminForManager(managerUsername); 
             LoadCashAmount();
             LoadSalesHistory();
         }
 
         private void LoadCashAmount()
         {
-            decimal amount = Queries.GetCurrentCashAmount(adminUsername);
+            decimal amount = Queries.GetCurrentCashAmount(adminUsername); 
             CashAmountTextBlock.Text = $"{amount:F2} ₽";
+        }
+
+        private void OpenCashManagement_Click(object sender, RoutedEventArgs e)
+        {
+            var cashWindow = new CashManagementWindow(adminUsername);
+            cashWindow.Closed += (s, ev) => LoadCashAmount();
+            cashWindow.ShowDialog();
         }
 
         private void LoadSalesHistory()
@@ -31,15 +39,24 @@ namespace Kursach.main_windows
 
         private void OpenSalesMenu_Click(object sender, RoutedEventArgs e)
         {
-            var salesWindow = new SalesWindow(adminUsername); // Передаем администратора [[3]]
+            var salesWindow = new SalesWindowManager(adminUsername);
             salesWindow.ShowDialog();
         }
 
-        private void OpenCashManagement_Click(object sender, RoutedEventArgs e)
+        private void SalesHistoryDataGrid_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-            var cashWindow = new CashManagementWindow(adminUsername); // Передаем администратора
-            cashWindow.Closed += (s, ev) => LoadCashAmount();
-            cashWindow.ShowDialog();
+            if (SalesHistoryDataGrid.SelectedItem is DataRowView selectedRow)
+            {
+                int saleId = Convert.ToInt32(selectedRow["SaleID"]);
+
+                var returnWindow = new ReturnWindow(saleId, adminUsername);
+                returnWindow.Closed += (s, ev) => LoadCashAmount();
+                if (returnWindow.ShowDialog() == true)
+                {
+                    LoadSalesHistory();
+                }
+            }
         }
+
     }
 }

@@ -10,7 +10,6 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <!-- Панель навигации -->
         <DockPanel Background="#FF3C3C3C" Grid.Row="0" HorizontalAlignment="Stretch">
             <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="20,0" Height="50">
                 <Button Content="Продажи" Click="OpenSalesMenu_Click" 
@@ -64,11 +63,10 @@
             </StackPanel>
         </DockPanel>
 
-        <!-- Таблица истории продаж -->
         <DataGrid x:Name="SalesHistoryDataGrid" AutoGenerateColumns="False" 
                   Background="#FF3C3C3C" Foreground="White" 
                   BorderThickness="0" GridLinesVisibility="None"
-                  Margin="20,0,20,20" CanUserAddRows="False" Grid.Row="1">
+                  Margin="20,0,20,20" CanUserAddRows="False" Grid.Row="1" MouseDoubleClick="SalesHistoryDataGrid_MouseDoubleClick">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="ID" Binding="{Binding SaleID}" Width="50" IsReadOnly="True" Visibility="Collapsed"/>
                 <DataGridTextColumn Header="Время продажи" Binding="{Binding SaleTime}" Width="*" IsReadOnly="True"/>

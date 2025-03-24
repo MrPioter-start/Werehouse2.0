@@ -8,9 +8,6 @@ using System.Windows.Input;
 
 namespace Kursach
 {
-    /// <summary>
-    /// Логика взаимодействия для AdminWindow.xaml
-    /// </summary>
     public partial class AdminWindow : Window
     {
         private string adminUsername;

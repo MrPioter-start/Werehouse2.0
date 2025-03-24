@@ -50,6 +50,9 @@
     <Compile Update="main_windows\admin\admin_codes\UserManagementWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="main_windows\SalesWindowManager.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="main_windows\UserWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>

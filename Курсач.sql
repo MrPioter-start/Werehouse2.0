@@ -22,13 +22,6 @@ CREATE TABLE Warehouses (
     FOREIGN KEY (ManagerID) REFERENCES Users(UserID)
 );
 
-CREATE TABLE Products (
-    ProductID INT PRIMARY KEY IDENTITY(1,1),
-    Name NVARCHAR(100) NOT NULL,
-    Description NVARCHAR(MAX),
-    Price DECIMAL(10, 2) NOT NULL
-);
-
 CREATE TABLE Stock (
     StockID INT PRIMARY KEY IDENTITY(1,1),
     ProductID INT NOT NULL,
@@ -46,6 +39,64 @@ CREATE TABLE AccessCodes (
     CreatedAt DATETIME DEFAULT GETDATE(),
     FOREIGN KEY (RoleID) REFERENCES Roles(RoleID)
 );
+
+CREATE TABLE Returns (
+    ReturnID INT PRIMARY KEY IDENTITY(1,1),
+    SaleID INT NOT NULL, 
+    ProductName NVARCHAR(100) NOT NULL,
+    ReturnedQuantity INT NOT NULL,
+    ReturnTime DATETIME DEFAULT GETDATE(),
+    AdminUsername NVARCHAR(50) NOT NULL,
+    FOREIGN KEY (SaleID) REFERENCES Sales(SaleID)
+);
+
+
+CREATE TABLE Sales (
+    SaleID INT PRIMARY KEY IDENTITY(1,1),
+    ProductID INT NOT NULL,
+    SoldBy NVARCHAR(100) NOT NULL,
+    Quantity INT NOT NULL,
+    SaleDate DATETIME NOT NULL DEFAULT GETDATE(),
+    TotalPrice DECIMAL(18, 2) NOT NULL,
+    FOREIGN KEY (ProductID) REFERENCES Products(ProductID)
+);
+
+CREATE TABLE SaleDetails (
+    DetailID INT PRIMARY KEY IDENTITY(1,1),
+    SaleID INT NOT NULL,
+    ProductName NVARCHAR(100) NOT NULL,
+    Quantity INT NOT NULL,
+    Price DECIMAL(18,2) NOT NULL,
+    FOREIGN KEY (SaleID) REFERENCES Sales(SaleID)
+);
+
+CREATE TABLE CashRegister (
+    CashID INT PRIMARY KEY IDENTITY(1,1),
+    Amount DECIMAL(18,2) NOT NULL DEFAULT 0,
+    LastUpdate DATETIME DEFAULT GETDATE()
+);
+
+CREATE TABLE CashTransactions (
+    TransactionID INT PRIMARY KEY IDENTITY(1,1),
+    Amount DECIMAL(18,2) NOT NULL,
+    OperationType NVARCHAR(50) NOT NULL,
+    Timestamp DATETIME DEFAULT GETDATE(),
+    AdminUsername NVARCHAR(50) NOT NULL,
+    FOREIGN KEY (AdminUsername) REFERENCES Users(Username)
+);
+
+
+CREATE TABLE Products (
+    ProductID INT PRIMARY KEY IDENTITY(1,1),
+    Name NVARCHAR(100) NOT NULL,          
+    CategoryID INT NOT NULL,               
+    Price DECIMAL(18, 2) NOT NULL,          
+    Quantity INT NOT NULL,                
+    CreatedBy NVARCHAR(50) NOT NULL,      
+    FOREIGN KEY (CategoryID) REFERENCES Categories(CategoryID), 
+    FOREIGN KEY (CreatedBy) REFERENCES Users(Username)   
+);
+
 
 INSERT INTO Roles (RoleName) VALUES ('Администратор');
 INSERT INTO Roles (RoleName) VALUES ('Менеджер');
@@ -75,33 +126,14 @@ CREATE TABLE Categories (
     CategoryName NVARCHAR(100) NOT NULL
 );
 
-CREATE TABLE Sales (
-    SaleID INT PRIMARY KEY IDENTITY(1,1),
-    ProductID INT NOT NULL,
-    SoldBy NVARCHAR(100) NOT NULL,
-    Quantity INT NOT NULL,
-    SaleDate DATETIME NOT NULL DEFAULT GETDATE(),
-    TotalPrice DECIMAL(18, 2) NOT NULL,
-    FOREIGN KEY (ProductID) REFERENCES Products(ProductID)
-);
-
 drop table Sales
 drop table Products
-
-CREATE TABLE Products (
-    ProductID INT PRIMARY KEY IDENTITY(1,1),
-    Name NVARCHAR(100) NOT NULL,          
-    CategoryID INT NOT NULL,               
-    Price DECIMAL(18, 2) NOT NULL,          
-    Quantity INT NOT NULL,                
-    CreatedBy NVARCHAR(50) NOT NULL,      
-    FOREIGN KEY (CategoryID) REFERENCES Categories(CategoryID), 
-    FOREIGN KEY (CreatedBy) REFERENCES Users(Username)   
-);
 
 SELECT COLUMN_NAME, DATA_TYPE, CHARACTER_MAXIMUM_LENGTH
 FROM INFORMATION_SCHEMA.COLUMNS
 WHERE TABLE_NAME = 'Users' AND COLUMN_NAME = 'Username';
+
+SELECT * FROM Returns WHERE AdminUsername = 'admin';
 
 ALTER TABLE Categories ADD CreatedBy NVARCHAR(50);
 ALTER TABLE Categories
@@ -110,22 +142,6 @@ FOREIGN KEY (CreatedBy) REFERENCES Users(Username);
 
 SELECT Username, AccessCode FROM Users WHERE Username = 'sasha';
 ALTER TABLE Users DROP COLUMN AccessCode;
-
-CREATE TABLE Sales (
-    SaleID INT PRIMARY KEY IDENTITY(1,1),
-    AdminUsername NVARCHAR(50) NOT NULL, 
-    Total DECIMAL(18,2) NOT NULL,
-    SaleTime DATETIME DEFAULT GETDATE() 
-);
-
-CREATE TABLE SaleDetails (
-    DetailID INT PRIMARY KEY IDENTITY(1,1),
-    SaleID INT NOT NULL,
-    ProductName NVARCHAR(100) NOT NULL,
-    Quantity INT NOT NULL,
-    Price DECIMAL(18,2) NOT NULL,
-    FOREIGN KEY (SaleID) REFERENCES Sales(SaleID)
-);
 
 ALTER TABLE Sales 
 DROP COLUMN AdminUsername; 
@@ -142,33 +158,6 @@ ADD UserUsername NVARCHAR(50) NOT NULL;
 
 ALTER TABLE Sales 
 ADD CONSTRAINT DF_UserUsername DEFAULT 'default_user' FOR UserUsername;
-
-CREATE TABLE Returns (
-    ReturnID INT PRIMARY KEY IDENTITY(1,1),
-    SaleID INT NOT NULL, 
-    ProductName NVARCHAR(100) NOT NULL,
-    ReturnedQuantity INT NOT NULL,
-    ReturnTime DATETIME DEFAULT GETDATE(),
-    AdminUsername NVARCHAR(50) NOT NULL,
-    FOREIGN KEY (SaleID) REFERENCES Sales(SaleID)
-);
-
-SELECT * FROM Returns WHERE AdminUsername = 'admin';
-
-CREATE TABLE CashRegister (
-    CashID INT PRIMARY KEY IDENTITY(1,1),
-    Amount DECIMAL(18,2) NOT NULL DEFAULT 0,
-    LastUpdate DATETIME DEFAULT GETDATE()
-);
-
-CREATE TABLE CashTransactions (
-    TransactionID INT PRIMARY KEY IDENTITY(1,1),
-    Amount DECIMAL(18,2) NOT NULL,
-    OperationType NVARCHAR(50) NOT NULL,
-    Timestamp DATETIME DEFAULT GETDATE(),
-    AdminUsername NVARCHAR(50) NOT NULL,
-    FOREIGN KEY (AdminUsername) REFERENCES Users(Username)
-);
 
 ALTER TABLE CashRegister 
 ADD UserUsername NVARCHAR(50) NOT NULL; 
